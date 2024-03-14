@@ -2,6 +2,7 @@
     <v-card
       hover
       title="To Dos"
+      color="pink-lighten-5"
     >
       <template v-slot:text>
         <v-text-field
@@ -14,7 +15,7 @@
         ></v-text-field>
       </template>
   
-      <v-data-table density="compact" color="teal-lighten-4"
+      <v-data-table density="compact"
         :headers="headers"
         :items="datos"
         :search="search"
@@ -22,7 +23,7 @@
     </v-card>
   </template>
 
-  <script setup>
+<script setup>
   import { ref } from 'vue';
 
   const num = ref(1);
@@ -43,22 +44,20 @@
 
   );
 
-const datos = ref([]);
+  const datos = ref([]);
 
-async function fetchToDos() {
-  try {
-    num.value = Math.floor(Math.random() * 199 + 1);
-    const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${num.value}`);
-    const data = await response.json();
-    datos.value.push(data);
-  } catch (error) {
-    console.error('Error fetching data:', error);
+  async function fetchToDos() {
+    try {
+      num.value = Math.floor(Math.random() * 199 + 1);
+      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${num.value}`);
+      const data = await response.json();
+      datos.value.push(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   }
-}
 
-for(let i = 0; i < 8; i++) {
-    fetchToDos();
-}
-    
-
-  </script>
+  for(let i = 0; i < 8; i++) {
+      fetchToDos();
+  }
+</script>

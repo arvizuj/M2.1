@@ -4,7 +4,7 @@
 <template>
   <v-card>
     <v-layout>
-      <v-app-bar color="pink-lighten-2" title="Aplicación básica con Vuetify"></v-app-bar>
+      <v-app-bar color="pink-lighten-2" title="CRUD con Vuetify"></v-app-bar>
       <v-navigation-drawer
         color="pink-lighten-1"
         v-model="drawer"
@@ -32,6 +32,7 @@
           <v-list-item prepend-icon="mdi-home-city" link to="/" title="Inicio"></v-list-item>
           <v-list-item prepend-icon="mdi-image" link to="/imagen" title="Imagen y chiste"></v-list-item>
           <v-list-item prepend-icon="mdi-table" link to="/tabla" title="Tabla"></v-list-item>
+          <v-list-item prepend-icon="mdi-table" link to="/tabla_2" title="Tabla con CRUD"></v-list-item>
         </v-list>
       </v-navigation-drawer>
       
